@@ -1,5 +1,6 @@
 Backend Setup
 Clone the Repository:
+Go to backend and start server
 
 sh
 Copy code
