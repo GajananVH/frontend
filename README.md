@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+Backend Setup
+Clone the Repository:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+sh
+Copy code
+git clone https://github.com/your-username/vehicle_service_system.git
+cd vehicle_service_system
+Create and Activate a Virtual Environment:
 
-## Available Scripts
+sh
+Copy code
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+Install Backend Dependencies:
 
-In the project directory, you can run:
+sh
+Copy code
+pip install -r requirements.txt
+Set Up the Database:
 
-### `npm start`
+sh
+Copy code
+python manage.py migrate
+Create a Superuser (Optional):
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+sh
+Copy code
+python manage.py createsuperuser
+Run the Backend Server:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+sh
+Copy code
+python manage.py runserver
+Frontend Setup
+Navigate to the Frontend Directory:
 
-### `npm test`
+sh
+Copy code
+cd frontend
+Install Frontend Dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+sh
+Copy code
+npm install
+Start the Frontend Development Server:
 
-### `npm run build`
+sh
+Copy code
+npm start
+Usage
+Running the Backend
+The backend server runs on http://localhost:8000 by default.
+Ensure you have applied migrations and created a superuser if needed.
+Running the Frontend
+The frontend development server runs on http://localhost:3000 by default.
+The React application will fetch data from the backend API at http://localhost:8000/api.
+API Endpoints
+GET /api/issues/ - List all issues
+POST /api/issues/ - Create a new issue
+GET /api/issues/{id}/ - Retrieve a specific issue
+PUT /api/issues/{id}/ - Update a specific issue
+DELETE /api/issues/{id}/ - Delete a specific issue
+Testing
+Backend Testing:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Run tests using Django's test framework:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+sh
+Copy code
+python manage.py test
+Frontend Testing:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use npm test for running unit tests with React.
 
-### `npm run eject`
+Contributing
+Fork the Repository: Create a fork of the repository on GitHub.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+sh
+Copy code
+git checkout -b feature/your-feature
+Make Changes and Commit:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+sh
+Copy code
+git add .
+git commit -m "Add new feature"
+Push Changes to Your Fork:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+sh
+Copy code
+git push origin feature/your-feature
+Create a Pull Request: Open a pull request on the original repository.
